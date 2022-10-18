@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comanda</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	//Recebendo os valores
+	const arrayOriginal = ['3','4','item01 100','item02 200','item03 300','item04 400', 'item02 item01'];
+
+	//processamento
+	let nClientes=0;
+	let nItens=0;
+	let aNomeItem =[];
+	let aPrecItem =[];
+	let aRemovItem=[];
+ 	let loop=0;
+
+ 	let nVlTotal=0;
+ 	let nVlRateado=0;
+ 	let nVlNRateado=0;
+
+ 	let bValida; 
+
+ 	nClientes = (arrayOriginal[0]);
+	nItens = (arrayOriginal[1]);
+
+	aRemovItem = arrayOriginal[arrayOriginal.length-1].split(' ');
+	
+	//separando a descricao do valor 
+	for(let i=0;i<nItens;i++){
+		loop=i+2;
+		
+		aNomeItem.push(arrayOriginal[loop].slice(0, arrayOriginal[loop].indexOf(' ')));
+		aPrecItem.push(arrayOriginal[loop].slice(arrayOriginal[loop].indexOf(' ')));	
+		nVlTotal+=parseInt(arrayOriginal[loop].slice(arrayOriginal[loop].indexOf(' ')));
+
+		bValida = (aRemovItem.indexOf(arrayOriginal[loop].slice(0, arrayOriginal[loop].indexOf(' '))));
+		//linha 3 
+		if(bValida != -1){
+			nVlNRateado+= parseInt(arrayOriginal[loop].slice(arrayOriginal[loop].indexOf(' ')));
+		}else{
+			nVlRateado+= parseInt(arrayOriginal[loop].slice(arrayOriginal[loop].indexOf(' ')));
+		}
+	}		
+	console.log(arrayOriginal);
+	nVlRateado = parseInt(nVlRateado/nClientes);
+
+		console.log("Valor total: "+nVlTotal);
+		console.log("Valor dividido: "+ nVlRateado);
+		console.log("Valor não dividido: "+nVlNRateado);
+		
+
+
+	</script>
+</body>
+</html>

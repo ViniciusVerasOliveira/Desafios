@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HandOff</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	//Recebendo os valores
+	const linhas = ['5','3 6 8 4 7','4','3'];
+	
+	//processamento
+  	let nVendedores; 
+  	let aIdVendedores = [];
+  	let nClientes = 0;
+
+  	let posicoes;
+  	let retornoPosicoes;
+  	let retornoPosicoesX; 
+  	let aux; 
+
+	nVendedores = linhas[0]
+	aIdVendedores.push(linhas[1].split(" "))
+	aIdVendedores=aIdVendedores[0];
+  	nClientes = linhas[2];
+  	nClientes = parseFloat(nClientes);
+  	nVendedorX = linhas[3];
+
+  	posicoes = parseInt(aIdVendedores.length);
+  	retornoPosicoes = (posicoes+nClientes);
+  	 
+
+  	for(let i=0; i<nClientes; i++){
+  		for(let j=0; j<posicoes;j++){
+  			if(j==0){
+  				aux = aIdVendedores[j];	
+  				aIdVendedores[j]=aIdVendedores[j+1];
+  			
+  			}else if(j>0 && j<(posicoes-1)){
+  				aIdVendedores[j]=aIdVendedores[j+1];
+  			
+  			}else{
+  				aIdVendedores[j] = aux; 
+  			}			
+  		}
+  	}
+  	retornoPosicoesX = aIdVendedores.indexOf(nVendedorX);
+
+  	//retorno 
+  	console.log("Primeiro da fila "+ aIdVendedores[0]);
+  	console.log("Quantos faltam para o vendedor ID "+ aIdVendedores[retornoPosicoesX] +": "+retornoPosicoesX);
+
+  	</script>
+
+</body>
+</html>
