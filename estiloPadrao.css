@@ -1,0 +1,26 @@
+	body{
+		background-color: #f3f3f3;
+	}
+	#textTitulo{
+		color: #343a40;
+		font-weight: 100;
+		text-decoration: underline 2px;
+	}
+	#textResumo{
+	    height: 75vh;
+    	width: 100%;
+    	background-color: #fff;
+    	font-size: 10rem;
+    	border: #707a9f 2px solid;
+	}
+	#textResolucao{
+		height: 75vh;
+    	width: 100%;
+    	background-color: #fff;
+    	color:#343a40;
+    	border:#707a9f 2px solid;
+	}	
+	.resposta{
+		color: #202d8a;
+		font-weight: 400;
+	}
