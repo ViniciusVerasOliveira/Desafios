@@ -1,6 +1,12 @@
 	body{
 		background-color: #f3f3f3;
 	}
+	#conteudo{
+		margin-top: 20px;
+		text-align: center;
+		text-decoration: none;
+	}
+/*conteudos*/
 	#textTitulo{
 		color: #343a40;
 		font-weight: 100;
